@@ -1,6 +1,20 @@
-# Civilization-Simulation-
-Inspired by levantine ancient civilizations creating simulation to illustrate the rise and fall of civilizations
+# Civilization Simulation
 
+A small terminal-based project for exploring how an ancient civilization might
+grow and prosper.
 
-## Current Working
-- Setting up various classes to begin building Grid and random placement
+The first version creates a random 15 x 15 world. Every position in the grid is
+a `Tile` object containing:
+
+- its `x` and `y` coordinates;
+- a terrain type;
+- food, wood, and stone resource amounts.
+
+## Run it
+
+```powershell
+python Civilization.py
+```
+
+Map symbols: `.` grassland, `F` forest, `+` fertile land, `M` mountain, and `~`
+water.

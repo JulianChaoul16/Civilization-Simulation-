@@ -74,7 +74,11 @@ class World:
 
     def render(self) -> str:
         """Build the terminal representation of the world."""
-        rows = [" ".join(tile.symbol for tile in row) for row in self.grid]
+        border = "+" + "+".join("---" for _ in range(self.width)) + "+"
+        rows = [border]
+        for row in self.grid:
+            rows.append("|" + "|".join(f" {tile.symbol} " for tile in row) + "|")
+            rows.append(border)
         legend = "  ".join(
             f"{symbol} {terrain.replace('_', ' ').title()}"
             for terrain, symbol in TERRAIN_SYMBOLS.items()
